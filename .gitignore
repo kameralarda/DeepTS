@@ -7,6 +7,10 @@ package-lock.json
 dist/
 build/
 
+# Executables
+deep-ts-*
+*.exe
+
 # TypeScript
 *.tsbuildinfo
 

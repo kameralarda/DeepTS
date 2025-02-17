@@ -48,6 +48,39 @@ Start the production server:
 yarn start
 ```
 
+## Executables
+
+You can build standalone executables for Linux, macOS, and Windows platforms.
+
+### Building Executables Locally
+
+To build executables for all platforms:
+```bash
+yarn package:all
+```
+
+This will create the following executables in the `dist` directory:
+- Linux: `deep-ts-linux`
+- macOS: `deep-ts-macos`
+- Windows: `deep-ts-win.exe`
+
+### Automated Releases
+
+The project uses GitHub Actions to automatically build and release executables when a new version tag is pushed. To create a new release:
+
+1. Tag a new version:
+```bash
+git tag v1.0.0  # Replace with your version
+git push origin v1.0.0
+```
+
+2. The GitHub Actions workflow will automatically:
+   - Build the executables for all platforms
+   - Create a new GitHub release
+   - Upload the executables as release assets
+
+You can find all releases in the [Releases](../../releases) section of the GitHub repository.
+
 ## API Endpoints
 
 ### 1. Free API (`/translate`)
@@ -103,4 +136,4 @@ Original Go implementation by:
 
 ## License
 
-MIT 
+MIT

@@ -1,12 +1,28 @@
 {
   "name": "deep-ts",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
     "start": "ts-node-dev src/main.ts",
     "build": "tsc",
-    "dev": "ts-node-dev --respawn src/main.ts"
+    "dev": "ts-node-dev --respawn src/main.ts",
+    "package": "pkg .",
+    "package:all": "npm run build && pkg . --targets node16-linux-x64,node16-macos-x64,node16-win-x64 --output dist/deep-ts"
+  },
+  "bin": "dist/index.js",
+  "pkg": {
+    "scripts": "dist/**/*.js",
+    "assets": [
+      "dist/**/*",
+      "node_modules/**/*"
+    ],
+    "targets": [
+      "node16-linux-x64",
+      "node16-macos-x64",
+      "node16-win-x64"
+    ],
+    "outputPath": "dist"
   },
   "dependencies": {
     "@types/cors": "^2.8.17",
@@ -19,5 +35,8 @@
     "https-proxy-agent": "^7.0.6",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1"
   }
 }
