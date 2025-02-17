@@ -45,7 +45,7 @@ function authMiddleware(config: Config): express.RequestHandler {
 app.get('/', (req, res) => {
     res.json({
         code: 200,
-        message: 'DeepL Free API, Developed by sjlleo and missuo. Go to /translate with POST. http://github.com/OwO-Network/DeepLX'
+        message: 'DeepL Free API, Developed by sjlleo and missuo. Converted TypeScript by kameralarda. Go to /translate with POST. http://github.com/OwO-Network/DeepLX'
     });
 });
 
@@ -214,6 +214,6 @@ app.use((req, res) => {
 
 // Start server
 app.listen(config.port, config.ip, () => {
-    console.log(`DeepL X has been successfully launched! Listening on ${config.ip}:${config.port}`);
-    console.log('Developed by sjlleo <i@leo.moe> and missuo <me@missuo.me>.');
+    console.log(`DeepTS has been successfully launched! Listening on ${config.ip}:${config.port}`);
+    console.log('Developed by sjlleo <i@leo.moe> and missuo <me@missuo.me>. Converted TypeScript by kameralarda.');
 }); 
